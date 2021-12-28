@@ -1,23 +1,51 @@
 import React, { useState } from "react";
- const App=()=>{
- const [name ,setName]=useState();
- const [fullName,setFullname]=useState();
 
+const App1 = () => {
+  const [name, setName] = useState("");
+  const [fullName, setFullName] = useState();
+  const [lastname, setLastName] = useState();
+  const [lastNameNew, setLastNameNew] = useState("");
 
-    const inputEvent=(e)=>{
-       setName( e.target.value);
+  const onSubmits = (event) => {
+    event.preventDefault();
+    setFullName(name);
+    setLastNameNew(lastname);
+  };
 
-    };
-     const input=()=>{
-         setFullname(name);
-        };
-    return(
-        <>
-        <h1>Hii {fullName}</h1>
-        <input type="text" placeholder="Enter your name" value={name} onChange={inputEvent}/>
-                <button onClick={input}>Submit</button>
-        </>
-    );
- };
+  const inputEvent = (e) => {
+    console.log(e.target.value);
+    setName(e.target.value);
+  };
 
- export default App;
+  const inputEventTwo = (event) => {
+    setLastName(event.target.value);
+  };
+
+  return (
+    <>
+      <div>
+        <form onSubmit={onSubmits}>
+          <h1>
+            Hello {fullName} {lastNameNew}
+          </h1>
+          <input
+            type="text"
+            placeholder="Enter Your first name"
+            onChange={inputEvent}
+            value={name}
+          />
+          <br />
+          <input
+            type="text"
+            placeholder="Enter Your last name"
+            onChange={inputEventTwo}
+            value={lastname}
+          />
+
+          <button type="submit">Click Me👍</button>
+        </form>
+      </div>
+    </>
+  );
+};
+export default App1;
