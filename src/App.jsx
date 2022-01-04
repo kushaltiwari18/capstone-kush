@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./index.css";
 
 const App1 = () => {
   const [fullName, setFullName] = useState({
@@ -36,14 +37,14 @@ const App1 = () => {
 
   return (
     <>
-      <div>
-        <form onSubmit={onSubmits}>
+      <div className="md1"> 
+        <form className="ipd" onSubmit={onSubmits}>
           <h1>
-            Hello {fullName.fname} {fullName.lname}
+           Apple library <br/>  {fullName.fname} {fullName.lname}
           </h1>
           <p>{fullName.email}</p>
           <p>{fullName.mob}</p>
-          <input
+          <input className="ip2"
             type="text"
             placeholder="Enter Your first name"
             name="fName"
@@ -52,7 +53,7 @@ const App1 = () => {
             autoComplete="off"
           />
           <br />
-          <input
+          <input className="ip2"
             type="text"
             placeholder="Enter Your last name"
             name="lName"
@@ -61,7 +62,7 @@ const App1 = () => {
             autoComplete="off"
           />
           <br/>
-            <input
+            <input className="ip2"
             type="text"
             placeholder="Enter Your Email"
             name="Email"
@@ -70,7 +71,7 @@ const App1 = () => {
             autoComplete="off"
           />
           <br/> 
-          <input
+          <input className="ip2"
           type="text"
           placeholder="Enter Your Mob no."
           name="Mob"
@@ -79,7 +80,7 @@ const App1 = () => {
           autoComplete="off"
         />
         <br/>
-          <button type="submit">Click Me👍</button>
+          <button className="btn_div" type="submit">Click Me👍</button>
         </form>
       </div>
     </>
